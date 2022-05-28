@@ -1,0 +1,614 @@
+@import "_nullstyle";
+
+@function prc($pxOne, $pxTwo) {
+	$result: ($pxOne / $pxTwo) * 100%;
+	@return $result;
+}
+@function rem($px) {
+	$result: ($px / 16) + rem;
+	@return $result;
+}
+@function em($px) {
+	$result: ($px / 16) + em;
+	@return $result;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	font-display: swap;
+	src: url(../fonts/Gilroy-Light.woff2), url(../fonts/Gilroy-Light.woff);
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	font-display: swap;
+	src: url(../fonts/Gilroy-Regular.woff2), url(../fonts/Gilroy-Regular.woff);
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	font-display: swap;
+	src: url(../fonts/Gilroy-Medium.woff2), url(../fonts/Gilroy-Medium.woff);
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	font-display: swap;
+	src: url(../fonts/Gilroy-Semibold.woff2), url(../fonts/Gilroy-Semibold.woff);
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	font-display: swap;
+	src: url(../fonts/Gilroy-Bold.woff2), url(../fonts/Gilroy-Bold.woff);
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	font-display: swap;
+	src: url(../fonts/Gilroy-Extrabold.woff2), url(../fonts/Gilroy-Extrabold.woff);
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	font-display: swap;
+	src: url(../fonts/Gilroy-Black.woff2), url(../fonts/Gilroy-Black.woff);
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Proxima Nova";
+	font-display: swap;
+	src: url(../fonts/ProximaNova-Bold.woff2), url(../fonts/ProximaNova-Bold.woff);
+	font-weight: 700;
+	font-style: normal;
+}
+
+$color-blue: #003adc;
+$color-main: #181940;
+$color-second: #714a25;
+$bg-color: #eff2f9;
+
+body {
+	font-family: "Gilroy", sans-serif;
+	font-weight: 800;
+	font-size: rem(24);
+}
+
+.--container {
+	max-width: 1600px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.main {
+	flex: 1 1 auto;
+}
+
+.title {
+	font-size: rem(60);
+	font-weight: 800;
+	line-height: 1.15;
+	color: $color-second;
+	span {
+		color: $color-main;
+	}
+}
+
+// ! HEADER ========================================
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 15px 0;
+	z-index: 10;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__logo {
+	}
+	&__contacts {
+	}
+}
+
+.header-logo {
+}
+
+.contacts {
+	&__button {
+		display: inline-block;
+		background: url(../img/icons/whatsapp-logo.svg) no-repeat 24px center, $color-blue;
+		color: #fff;
+		font-size: rem(20);
+		font-weight: 500;
+		padding: 17.5px 24px 17.5px 70px;
+		&:not(:last-child) {
+			margin: 0 22px 0 0;
+		}
+		&:hover {
+			background: url(../img/icons/whatsapp-logo.svg) no-repeat 24px center, $color-second;
+		}
+	}
+	&__link {
+		color: #333;
+		font-size: rem(20);
+		font-weight: 600;
+	}
+}
+
+// ! MAIN ========================================
+
+.main {
+}
+
+.hero {
+	padding: 160px 0 240px 0;
+	background: $bg-color;
+	&__container {
+		position: relative;
+	}
+	&__desc-list {
+		display: flex;
+		flex-flow: wrap;
+		line-height: 1.2;
+		&:not(:last-child) {
+			margin: 0 0 42px 0;
+		}
+		li {
+			position: relative;
+			&:not(:last-child) {
+				margin: 0 20px 0 0;
+			}
+			&:not(:last-child)::after {
+				content: "|";
+				font-weight: 400;
+				position: absolute;
+				top: 0;
+				right: -10px;
+			}
+		}
+	}
+	&__title {
+		position: relative;
+		z-index: 2;
+		font-size: rem(115);
+		font-weight: 900;
+		color: $color-second;
+		span {
+			color: $color-blue;
+		}
+		&:not(:last-child) {
+			margin: 0 0 70px 0;
+		}
+	}
+	&__subtitle {
+		position: relative;
+		z-index: 2;
+		font-size: rem(27);
+		font-weight: 800;
+		line-height: 1.2;
+		&:not(:last-child) {
+			margin: 0 0 27px 0;
+		}
+	}
+	&__list {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		flex-flow: wrap;
+		max-width: 885px;
+	}
+	&__list-item {
+		text-align: center;
+		padding: 5px 14px;
+		font-size: rem(27);
+		font-weight: 400;
+		line-height: 1.2;
+		background: #d8e0f7;
+		border-radius: 10px;
+		margin: 0 12px 12px 0;
+	}
+	&__image {
+		position: absolute;
+		right: -60px;
+		top: 90px;
+		@media (max-width: 1760px) {
+			right: 15px;
+			opacity: 0.2;
+		}
+	}
+}
+
+// ! REQUEST =====================================
+
+.request {
+	&__container {
+	}
+	&__title {
+		font-size: rem(32);
+		line-height: 1.25;
+		font-weight: 700;
+		&:not(:last-child) {
+			margin: 0 0 27px 0;
+		}
+	}
+	&__form {
+		padding: 80px 80px;
+		margin: -155px -80px 0 -80px;
+		background: #fff;
+	}
+	&__input-box {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr) minmax(150px, 422px);
+		align-items: center;
+		gap: 16px;
+		&:not(:last-child) {
+			margin: 0 0 20px 0;
+		}
+	}
+	&__input {
+		position: relative;
+		padding: 23px;
+		border: 1px solid #000;
+		font-size: rem(16);
+		font-weight: 400;
+		color: #303030;
+	}
+	&__button {
+		padding: 19.5px 20px;
+		background: $color-blue;
+		color: #fff;
+		font-weight: 700;
+		font-size: 20px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	&__agreement {
+		label {
+			font-weight: 400;
+			font-size: rem(12);
+			line-height: 1.25;
+			color: #303030;
+		}
+	}
+	&__checkbox {
+		position: absolute;
+		z-index: -1;
+		opacity: 0;
+		&:checked + label::before {
+			background-image: url("../img/icons/checkbox.svg");
+		}
+		&:hover + label::before {
+			border-color: #0b76ef;
+		}
+		&:focus + label::before {
+			box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+		}
+		&:not(:disabled):active + label::before {
+			background-color: #b3d7ff;
+			border-color: #b3d7ff;
+		}
+	}
+	&__checkbox + label {
+		display: inline-flex;
+		align-items: center;
+		user-select: none;
+		&::before {
+			content: "";
+			display: inline-block;
+			height: 16px;
+			flex: 0 0 16px;
+			border: 1px solid #adb5bd;
+			border-radius: 0.25em;
+			margin-right: 0.5em;
+			background: no-repeat 55% 50% / 70% 70%;
+		}
+	}
+}
+
+// ! ADVANTAGES ==================================
+
+.advantages {
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 50px 180px;
+		margin: 0 0 50px 0;
+		@media (max-width: 1600px) {
+			gap: 50px;
+		}
+	}
+	&__title {
+		&:not(:last-child) {
+			margin: 0 0 34px 0;
+		}
+	}
+}
+
+.advantage-item {
+	position: relative;
+	&:nth-child(1) {
+		.advantage-item__decor {
+			right: 0px;
+			top: 70px;
+			&--1 {
+				top: 23px;
+				left: 0;
+			}
+			&--2 {
+				top: 48px;
+				left: 0;
+			}
+		}
+	}
+	&:nth-child(2) {
+		.advantage-item__decor {
+			right: 0px;
+			top: 70px;
+			&--1 {
+				top: 15px;
+				left: 20px;
+			}
+			&--2 {
+				top: 39px;
+				left: -10px;
+			}
+			&--3 {
+				top: 60px;
+				right: 0px;
+			}
+			&--4 {
+				top: 80px;
+				left: 10px;
+			}
+		}
+	}
+	&:nth-child(3) {
+		.advantage-item__decor {
+			right: 0px;
+			top: 130px;
+			&--1 {
+				top: 70px;
+				right: 0;
+			}
+			&--2 {
+				top: 95px;
+				right: 0;
+			}
+		}
+	}
+	&:nth-child(4) {
+		.advantage-item__decor {
+			right: 0px;
+			top: 130px;
+			&--1 {
+				top: 73px;
+				right: 20px;
+			}
+		}
+	}
+	&__subtitle {
+		color: $color-blue;
+		font-size: rem(32);
+		line-height: 1.625;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	&__title {
+		font-size: rem(50);
+		font-weight: 800;
+		line-height: 1.62;
+		position: relative;
+		z-index: 10;
+		&:not(:last-child) {
+			margin: 0 0 25px 0;
+		}
+	}
+	&__text {
+		font-weight: 400;
+		line-height: 1.6;
+		position: relative;
+		z-index: 10;
+	}
+	&__decor {
+		font-size: rem(223);
+		color: #ffd5ad;
+		position: absolute;
+		line-height: 0.75;
+		&--1,
+		&--2,
+		&--3,
+		&--4 {
+			position: absolute;
+			width: 90px;
+			height: 3px;
+			background: #fff;
+			transform: matrix(-0.94, 0.33, 0.33, 0.94, 0, 0);
+		}
+	}
+}
+
+// ! MEDIA =======================================
+
+@media (max-width: 856px) {
+	.header {
+		&__logo {
+			margin: 0 0 25px 0;
+		}
+		&__container {
+			flex-flow: column;
+		}
+	}
+
+	.header-logo {
+		width: 100%;
+	}
+
+	.hero {
+		margin: 0 0 40px 0;
+		padding: 220px 0 150px 0;
+		&__container {
+			display: flex;
+			flex-flow: column;
+			align-items: center;
+		}
+		&__desc-list {
+			justify-content: center;
+			font-weight: 600;
+			&:not(:last-child) {
+				margin: 0 0 30px 0;
+			}
+		}
+		&__title {
+			font-size: rem(76);
+			text-align: center;
+			&:not(:last-child) {
+				margin: 0 0 30px 0;
+			}
+		}
+		&__subtitle {
+			font-weight: 600;
+			text-align: center;
+		}
+		&__list {
+			justify-content: center;
+			margin-right: -12px;
+		}
+		&__list-item {
+			flex: auto;
+		}
+	}
+
+	.request {
+		&__input-box {
+			grid-template-columns: repeat(2, 1fr);
+			input {
+				&:nth-child(3),
+				&:nth-child(4) {
+					grid-column: span 2;
+				}
+			}
+		}
+		&__title {
+			text-align: center;
+		}
+		&__form {
+			position: relative;
+			padding: 25px 80px 100px;
+		}
+	}
+
+	.advantages {
+		&__title {
+			&:not(:last-child) {
+				margin: 0 0 50px 0;
+			}
+		}
+		&__cards {
+			grid-template-columns: 1fr;
+		}
+		&__item {
+			&:nth-child(1),
+			&:nth-child(2) {
+				.advantage-item__decor {
+					top: 80px;
+					opacity: 0.4;
+				}
+			}
+			&:nth-child(3),
+			&:nth-child(4) {
+				.advantage-item__decor {
+					top: 90px;
+					opacity: 0.4;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 456px) {
+	.title {
+		text-align: center;
+	}
+	.contacts {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		&__button {
+			&:not(:last-child) {
+				margin: 0 0 25px 0;
+			}
+		}
+		&__link {
+			font-size: rem(34);
+		}
+	}
+
+	.hero {
+		padding: 280px 0 150px;
+		&__desc-list {
+			font-size: rem(24);
+		}
+		&__title {
+			font-size: rem(56);
+		}
+		&__list-item {
+			font-size: rem(24);
+		}
+		&__image {
+			opacity: 0.1;
+		}
+	}
+
+	.request {
+		&__input-box {
+			grid-template-columns: 1fr;
+			input {
+				&:nth-child(3),
+				&:nth-child(4) {
+					grid-column: span 1;
+				}
+			}
+		}
+	}
+
+	.advantage-item {
+		text-align: center;
+		&__title {
+			font-size: rem(42);
+		}
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(3),
+		&:nth-child(4) {
+			.advantage-item__decor {
+				top: 120px;
+				opacity: 0.4;
+			}
+		}
+	}
+}
