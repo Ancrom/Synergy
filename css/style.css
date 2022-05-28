@@ -145,6 +145,8 @@ body {
   font-family: "Gilroy", sans-serif;
   font-weight: 800;
   font-size: 1.5rem;
+  -webkit-transition: .5s ease-out;
+  transition: .5s ease-out;
 }
 
 .--container {
