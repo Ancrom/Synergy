@@ -86,7 +86,6 @@ body {
 	font-family: "Gilroy", sans-serif;
 	font-weight: 800;
 	font-size: rem(24);
-	transition: .5s ease-out;
 }
 
 .--container {
@@ -130,14 +129,8 @@ body {
 		justify-content: space-between;
 		align-items: center;
 	}
-	&__logo {
-	}
-	&__contacts {
-	}
 }
 
-.header-logo {
-}
 
 .contacts {
 	&__button {
@@ -147,11 +140,12 @@ body {
 		font-size: rem(20);
 		font-weight: 500;
 		padding: 17.5px 24px 17.5px 70px;
+		transition: all 0.3s ease-out;
 		&:not(:last-child) {
 			margin: 0 22px 0 0;
 		}
 		&:hover {
-			background: url(../img/icons/whatsapp-logo.svg) no-repeat 24px center, $color-second;
+			background: url(../img/icons/whatsapp-logo.svg) no-repeat 24px center, $color-main;
 		}
 	}
 	&__link {
@@ -162,9 +156,6 @@ body {
 }
 
 // ! MAIN ========================================
-
-.main {
-}
 
 .hero {
 	padding: 160px 0 240px 0;
@@ -287,6 +278,11 @@ body {
 		font-size: 20px;
 		text-align: center;
 		text-transform: uppercase;
+		cursor: pointer;
+		transition: all 0.3s ease-out;
+		&:hover {
+			background: $color-main;
+		}
 	}
 	&__agreement {
 		label {

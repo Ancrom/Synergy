@@ -145,8 +145,6 @@ body {
   font-family: "Gilroy", sans-serif;
   font-weight: 800;
   font-size: 1.5rem;
-  -webkit-transition: .5s ease-out;
-  transition: .5s ease-out;
 }
 
 .--container {
@@ -212,6 +210,8 @@ body {
   font-size: 1.25rem;
   font-weight: 500;
   padding: 17.5px 24px 17.5px 70px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .contacts__button:not(:last-child) {
@@ -219,7 +219,7 @@ body {
 }
 
 .contacts__button:hover {
-  background: url(../img/icons/whatsapp-logo.svg) no-repeat 24px center, #714a25;
+  background: url(../img/icons/whatsapp-logo.svg) no-repeat 24px center, #181940;
 }
 
 .contacts__link {
@@ -377,6 +377,13 @@ body {
   font-size: 20px;
   text-align: center;
   text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.request__button:hover {
+  background: #181940;
 }
 
 .request__agreement label {
