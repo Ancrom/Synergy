@@ -131,7 +131,6 @@ body {
 	}
 }
 
-
 .contacts {
 	&__button {
 		display: inline-block;
@@ -238,8 +237,6 @@ body {
 // ! REQUEST =====================================
 
 .request {
-	&__container {
-	}
 	&__title {
 		font-size: rem(32);
 		line-height: 1.25;
@@ -252,6 +249,7 @@ body {
 		padding: 80px 80px;
 		margin: -155px -80px 0 -80px;
 		background: #fff;
+		box-shadow: 0 100px 200px rgba(0, 0, 0, 0.100);
 	}
 	&__input-box {
 		display: grid;
@@ -330,18 +328,38 @@ body {
 // ! ADVANTAGES ==================================
 
 .advantages {
+	padding: 80px 0 180px;
+	&__container {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+	}
 	&__cards {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 50px 180px;
-		margin: 0 0 50px 0;
+		margin: 0 0 75px 0;
 		@media (max-width: 1600px) {
 			gap: 50px;
 		}
 	}
 	&__title {
+		align-self: flex-start;
 		&:not(:last-child) {
 			margin: 0 0 34px 0;
+		}
+	}
+	&__link {
+		background: $color-blue;
+		color: #fff;
+		font-weight: 700;
+		font-size: rem(20);
+		line-height: 1.5;
+		padding: 20px 30px;
+		transition: .3s ease-out;
+		&:hover {
+			background: $color-main;
+			transition: .3s ease-out;
 		}
 	}
 }
@@ -590,6 +608,12 @@ body {
 					grid-column: span 1;
 				}
 			}
+		}
+	}
+
+	.advantages {
+		&__title {
+			align-self: center;
 		}
 	}
 
