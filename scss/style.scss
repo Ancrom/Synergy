@@ -338,7 +338,7 @@ body {
 		gap: 50px 180px;
 		margin: 0 0 75px 0;
 		@media (max-width: 1600px) {
-			gap: 50px;
+			gap: 70px;
 		}
 	}
 	&__title {
@@ -530,6 +530,7 @@ body {
 			opacity: 0.2;
 		}
 	}
+
 	.education {
 		&__image {
 			z-index: -1;
@@ -543,6 +544,7 @@ body {
 			flex: 0 1 100%;
 		}
 	}
+
 	.advantage-item {
 		&__text {
 			br {
@@ -626,7 +628,7 @@ body {
 		}
 		&__title {
 			&:not(:last-child) {
-				margin: 0 0 50px 0;
+				margin: 0 0 70px 0;
 			}
 		}
 		&__cards {
@@ -653,6 +655,7 @@ body {
 		}
 	}
 }
+
 @media (max-width: 600px) {
 	.title {
 		font-size: rem(44);
@@ -661,15 +664,23 @@ body {
 		&__cards {
 			display: grid;
 			grid-auto-rows: 1fr;
-			margin: -4px -20px;
+			margin: -4px -4px;
+		}
+		&__item-wrapper {
+			grid-column: 2 / 3;
 		}
 		&__item {
-			padding: 18px 15px;
+			padding: 18px 25px;
+			flex-flow: column;
 		}
 	}
+
 	.advantage-item {
 		&__icon {
-			margin: 0 15px 0 0;
+			margin: 0 0 10px 0;
+		}
+		&__text {
+			text-align: center;
 		}
 	}
 }
