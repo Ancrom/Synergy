@@ -920,6 +920,9 @@ body {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+  .job-offers__image {
+    opacity: 0.2;
+  }
 }
 
 @media (max-width: 456px) {

@@ -771,6 +771,9 @@ body {
 		&__columns-wrapper {
 			grid-template-columns: 1fr;
 		}
+		&__image {
+			opacity: 0.2;
+		}
 	}
 }
 
