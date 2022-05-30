@@ -686,6 +686,75 @@ body {
   font-weight: 600;
 }
 
+.job-offers {
+  color: #181940;
+}
+
+.job-offers__container {
+  position: relative;
+  padding: 140px 20px 130px;
+}
+
+.job-offers__title {
+  margin: 0 0 60px 0;
+}
+
+.job-offers__columns-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 27px;
+}
+
+.job-offers__column:hover .job-offers__column-title {
+  background: #714a25;
+}
+
+.job-offers__column-title {
+  padding: 30px 20px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #181940;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-align: center;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.job-offers__column-title:not(:last-child) {
+  margin: 0 0 40px 0;
+}
+
+.job-offers__vacancy:not(:last-child) {
+  margin: 0 0 35px 0;
+}
+
+.job-offers__image {
+  position: absolute;
+  right: -50px;
+  bottom: -320px;
+}
+
+.vacancy__title, .vacancy__price {
+  display: block;
+  line-height: 1.6;
+  font-size: 1.5rem;
+  line-height: 160%;
+}
+
+.vacancy__title:not(:last-child) {
+  margin: 0 0 6px 0;
+}
+
+.vacancy__price {
+  font-size: 1.25rem;
+  color: #714a25;
+}
+
 @media (max-width: 1760px) {
   .hero__image {
     right: 15px;
@@ -705,6 +774,11 @@ body {
   }
   .advantage-item__text br {
     display: none;
+  }
+  .job-offers__columns-wrapper {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    row-gap: 90px;
   }
 }
 
@@ -809,6 +883,9 @@ body {
   .title {
     font-size: 2.75rem;
   }
+  .advantage__container {
+    padding: 120px 0 100px;
+  }
   .advantage__cards {
     display: -ms-grid;
     display: grid;
@@ -827,11 +904,21 @@ body {
         -ms-flex-flow: column;
             flex-flow: column;
   }
+  .advantage__image {
+    display: none;
+  }
   .advantage-item__icon {
     margin: 0 0 10px 0;
   }
   .advantage-item__text {
     text-align: center;
+  }
+  .job-offers__container {
+    padding: 50px 20px;
+  }
+  .job-offers__columns-wrapper {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 
