@@ -116,6 +116,20 @@ body {
 	}
 }
 
+.link {
+	background: $color-blue;
+	color: #fff;
+	font-weight: 700;
+	font-size: rem(20);
+	line-height: 1.5;
+	padding: 20px 30px;
+	transition: 0.3s ease-out;
+	&:hover {
+		background: $color-main;
+		transition: 0.3s ease-out;
+	}
+}
+
 // ! HEADER ========================================
 
 .header {
@@ -348,19 +362,6 @@ body {
 			margin: 0 0 34px 0;
 		}
 	}
-	&__link {
-		background: $color-blue;
-		color: #fff;
-		font-weight: 700;
-		font-size: rem(20);
-		line-height: 1.5;
-		padding: 20px 30px;
-		transition: 0.3s ease-out;
-		&:hover {
-			background: $color-main;
-			transition: 0.3s ease-out;
-		}
-	}
 	&__image {
 		position: absolute;
 		right: -155px;
@@ -587,6 +588,55 @@ body {
 		color: $color-second;
 	}
 }
+// ! DIPLOMAS ====================================
+
+.diplomas {
+	background: #eff2f9;
+	padding: 130px 0;
+	&__container {
+		display: flex;
+	}
+	&__inner {
+		max-width: 620px;
+		&:not(:last-child) {
+			margin: 0 40px 0 0;
+		}
+	}
+	&__title {
+		max-width: 430px;
+		text-align: left;
+		&:not(:last-child) {
+			margin: 0 0 60px 0;
+		}
+	}
+	&__subtitle {
+		font-weight: 700;
+		font-size: rem(32);
+		&:not(:last-child) {
+			margin: 0 0 44px 0;
+		}
+	}
+	&__text {
+		font-weight: 500;
+		font-size: rem(24);
+		line-height: 1.44;
+	}
+	&__scans {
+		margin: 12px 0 0 0;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 70px 16px;
+		justify-items: center;
+	}
+	&__diploma {
+		position: relative;
+		padding: 0 20px 22px;
+		background: #fff;
+	}
+	&__img {
+		margin: -12px 0 0 0;
+	}
+}
 
 // ! MEDIA =======================================
 
@@ -604,7 +654,27 @@ body {
 			opacity: 0.2;
 		}
 	}
+
+	.job-offers {
+		&__image {
+			right: 0;
+		}
+	}
 }
+
+@media (max-width: 1185px) {
+	.diplomas {
+		&__container {
+			flex-flow: column;
+		}
+		&__inner {
+			&:not(:last-child) {
+				margin: 0 0 50px 0;
+			}
+		}
+	}
+}
+
 @media (max-width: 1130px) {
 	.advantage {
 		&__item-wrapper {
@@ -624,6 +694,11 @@ body {
 		&__columns-wrapper {
 			grid-template-columns: repeat(2, 1fr);
 			row-gap: 90px;
+		}
+	}
+
+	.diplomas {
+		&__scans {
 		}
 	}
 }
@@ -728,6 +803,12 @@ body {
 			display: none;
 		}
 	}
+
+	.job-offers {
+		&__image {
+			opacity: 0.2;
+		}
+	}
 }
 
 @media (max-width: 600px) {
@@ -771,8 +852,11 @@ body {
 		&__columns-wrapper {
 			grid-template-columns: 1fr;
 		}
-		&__image {
-			opacity: 0.2;
+	}
+
+	.diplomas {
+		&__scans {
+			grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
 		}
 	}
 }

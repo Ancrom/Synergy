@@ -183,6 +183,23 @@ body {
   color: #181940;
 }
 
+.link {
+  background: #003adc;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  padding: 20px 30px;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.link:hover {
+  background: #181940;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
 .header {
   position: absolute;
   top: 0;
@@ -479,23 +496,6 @@ body {
   margin: 0 0 34px 0;
 }
 
-.education__link {
-  background: #003adc;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  padding: 20px 30px;
-  -webkit-transition: 0.3s ease-out;
-  transition: 0.3s ease-out;
-}
-
-.education__link:hover {
-  background: #181940;
-  -webkit-transition: 0.3s ease-out;
-  transition: 0.3s ease-out;
-}
-
 .education__image {
   position: absolute;
   right: -155px;
@@ -755,6 +755,69 @@ body {
   color: #714a25;
 }
 
+.diplomas {
+  background: #eff2f9;
+  padding: 130px 0;
+}
+
+.diplomas__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.diplomas__inner {
+  max-width: 620px;
+}
+
+.diplomas__inner:not(:last-child) {
+  margin: 0 40px 0 0;
+}
+
+.diplomas__title {
+  max-width: 430px;
+  text-align: left;
+}
+
+.diplomas__title:not(:last-child) {
+  margin: 0 0 60px 0;
+}
+
+.diplomas__subtitle {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.diplomas__subtitle:not(:last-child) {
+  margin: 0 0 44px 0;
+}
+
+.diplomas__text {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.44;
+}
+
+.diplomas__scans {
+  margin: 12px 0 0 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 70px 16px;
+  justify-items: center;
+}
+
+.diplomas__diploma {
+  position: relative;
+  padding: 0 20px 22px;
+  background: #fff;
+}
+
+.diplomas__img {
+  margin: -12px 0 0 0;
+}
+
 @media (max-width: 1760px) {
   .hero__image {
     right: 15px;
@@ -763,6 +826,21 @@ body {
   .education__image {
     z-index: -1;
     opacity: 0.2;
+  }
+  .job-offers__image {
+    right: 0;
+  }
+}
+
+@media (max-width: 1185px) {
+  .diplomas__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .diplomas__inner:not(:last-child) {
+    margin: 0 0 50px 0;
   }
 }
 
@@ -877,6 +955,9 @@ body {
   .education__image {
     display: none;
   }
+  .job-offers__image {
+    opacity: 0.2;
+  }
 }
 
 @media (max-width: 600px) {
@@ -920,8 +1001,9 @@ body {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
-  .job-offers__image {
-    opacity: 0.2;
+  .diplomas__scans {
+    -ms-grid-columns: (minmax(165px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
   }
 }
 
