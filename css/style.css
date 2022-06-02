@@ -651,6 +651,10 @@ body {
       flex-flow: wrap;
 }
 
+.advantage__cards:not(:last-child) {
+  margin: 0 0 76px 0;
+}
+
 .advantage__item-wrapper {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 50%;
@@ -664,6 +668,10 @@ body {
   bottom: -115px;
 }
 
+.advantage--bg-white {
+  background: #fff;
+}
+
 .advantage-item {
   padding: 18px 32px;
   display: -webkit-box;
@@ -674,6 +682,8 @@ body {
           align-items: center;
   background: #fff;
   height: 100%;
+  -webkit-box-shadow: 10px 8px 40px #c0c0c04d;
+          box-shadow: 10px 8px 40px #c0c0c04d;
 }
 
 .advantage-item__icon {
@@ -818,6 +828,82 @@ body {
   margin: -12px 0 0 0;
 }
 
+.teachers {
+  padding: 130px 0;
+  background: #eff2f9;
+}
+
+.teachers__title:not(:last-child) {
+  margin: 0 0 57px 0;
+}
+
+.teachers__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(346px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(346px, 1fr));
+  gap: 70px 26px;
+}
+
+.teachers__img {
+  width: 100%;
+}
+
+.teachers__img:not(:last-child) {
+  margin: 0 0 64px 0;
+}
+
+.teachers__name {
+  font-size: 1.5rem;
+  line-height: 1.08;
+}
+
+.teachers__name:not(:last-child) {
+  margin: 0 0 20px 0;
+}
+
+.teachers__text {
+  max-width: 400px;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #181940;
+}
+
+.partners {
+  padding: 150px 0 140px;
+}
+
+.partners__title:not(:last-child) {
+  margin: 0 0 100px 0;
+}
+
+.partners__grid {
+  margin: 0 auto;
+  max-width: 1300px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  -ms-grid-columns: (minmax(264px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
+  gap: 66px 42px;
+}
+
+.partners__item:nth-child(9) {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+}
+
+@media (max-width: 1221px) {
+  .partners__item:nth-child(9) {
+    grid-column: span 1;
+  }
+}
+
 @media (max-width: 1760px) {
   .hero__image {
     right: 15px;
@@ -958,6 +1044,14 @@ body {
   .job-offers__image {
     opacity: 0.2;
   }
+  .teachers__title span {
+    display: none;
+  }
+  .teachers__title::before {
+    content: "Наши";
+    display: block;
+    color: #181940;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1000,6 +1094,12 @@ body {
   .job-offers__columns-wrapper {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+  }
+  .job-offers__image {
+    display: none;
+  }
+  .diplomas {
+    padding: 90px 0;
   }
   .diplomas__scans {
     -ms-grid-columns: (minmax(165px, 1fr))[auto-fit];
@@ -1051,6 +1151,9 @@ body {
   .request__input-box input:nth-child(3), .request__input-box input:nth-child(4) {
     grid-column: span 1;
   }
+  .advantage__link {
+    padding: 20px 15px;
+  }
   .education__title {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
@@ -1065,6 +1168,10 @@ body {
   .education-item:nth-child(1) .education-item__decor, .education-item:nth-child(2) .education-item__decor, .education-item:nth-child(3) .education-item__decor, .education-item:nth-child(4) .education-item__decor {
     top: 120px;
     opacity: 0.4;
+  }
+  .teachers__grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 /*# sourceMappingURL=style.css.map */
