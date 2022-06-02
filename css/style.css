@@ -833,6 +833,10 @@ body {
   background: #eff2f9;
 }
 
+.teachers__container {
+  max-width: 1410px;
+}
+
 .teachers__title:not(:last-child) {
   margin: 0 0 57px 0;
 }
@@ -904,6 +908,77 @@ body {
   }
 }
 
+.student-life {
+  padding: 0 0 130px 0;
+}
+
+.student-life__container {
+  max-width: 1410px;
+}
+
+.student-life__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.student-life__photo {
+  position: relative;
+  padding: 0 0 50% 0;
+  overflow: hidden;
+}
+
+.student-life__photo--big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.student-life__photo--decor {
+  display: block;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  z-index: 2;
+  top: -280px;
+  left: -75px;
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+          transform: matrix(-1, 0, 0, 1, 0, 0);
+  background: rgba(24, 25, 64, 0.7);
+  border-radius: 50%;
+}
+
+.student-life__title {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  top: 48px;
+  left: 48px;
+  font-weight: 900;
+  font-size: 2.25rem;
+  line-height: 1.17;
+  text-transform: uppercase;
+}
+
+.student-life__title span {
+  font-weight: 800;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #fff;
+}
+
+.student-life__image {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 @media (max-width: 1760px) {
   .hero__image {
     right: 15px;
@@ -943,6 +1018,20 @@ body {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     row-gap: 90px;
+  }
+  .student-life__grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .student-life__photo {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .student-life__photo--big:nth-child(3) {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
 }
 
@@ -1052,6 +1141,13 @@ body {
     display: block;
     color: #181940;
   }
+  .student-life__grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .student-life__photo--big {
+    grid-column: span 1;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1104,6 +1200,14 @@ body {
   .diplomas__scans {
     -ms-grid-columns: (minmax(165px, 1fr))[auto-fit];
         grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  }
+  .student-life__title {
+    top: 20px;
+    left: 20px;
+  }
+  .student-life__photo--decor {
+    top: -360px;
+    left: -120px;
   }
 }
 
@@ -1172,6 +1276,21 @@ body {
   .teachers__grid {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+  }
+  .student-life__photo--decor {
+    display: none;
+  }
+  .student-life__title {
+    font-size: 1.75rem;
+    text-align: center;
+    left: 0;
+  }
+  .student-life__title br:nth-child(2) {
+    display: none;
+  }
+  .student-life__title span {
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

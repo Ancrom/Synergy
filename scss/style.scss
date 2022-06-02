@@ -651,6 +651,7 @@ body {
 	padding: 130px 0;
 	background: #eff2f9;
 	&__container {
+		max-width: 1410px;
 	}
 	&__title {
 		&:not(:last-child) {
@@ -714,6 +715,67 @@ body {
 	}
 }
 
+// ! STUDENT-LIFE ================================
+
+.student-life {
+	padding: 0 0 130px 0;
+	&__container {
+		max-width: 1410px;
+	}
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 15px;
+	}
+	&__photo {
+		position: relative;
+		padding: 0 0 50% 0;
+		overflow: hidden;
+		&--big {
+			grid-column: span 2;
+			grid-row: span 2;
+		}
+		&--decor {
+			display: block;
+			position: absolute;
+			width: 500px;
+			height: 500px;
+			z-index: 2;
+			top: -280px;
+			left: -75px;
+			transform: matrix(-1, 0, 0, 1, 0, 0);
+			background: rgba(24, 25, 64, 0.7);
+			border-radius: 50%;
+		}
+	}
+	&__title {
+		position: relative;
+		z-index: 3;
+		color: #fff;
+		top: 48px;
+		left: 48px;
+		font-weight: 900;
+		font-size: rem(36);
+		line-height: 1.17;
+		text-transform: uppercase;
+		span {
+			font-weight: 800;
+			-webkit-text-fill-color: transparent;
+			-webkit-text-stroke: 1px #fff;
+		}
+	}
+	&__image {
+		position: absolute;
+		content: "";
+		display: block;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
 // ! MEDIA =======================================
 
 @media (max-width: 1760px) {
@@ -770,6 +832,18 @@ body {
 		&__columns-wrapper {
 			grid-template-columns: repeat(2, 1fr);
 			row-gap: 90px;
+		}
+	}
+
+	.student-life {
+		&__grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		&__photo {
+			order: 2;
+			&--big:nth-child(3) {
+				order: 1;
+			}
 		}
 	}
 }
@@ -893,6 +967,17 @@ body {
 			}
 		}
 	}
+
+	.student-life {
+		&__grid {
+			grid-template-columns: 1fr;
+		}
+		&__photo {
+			&--big {
+				grid-column: span 1;
+			}
+		}
+	}
 }
 
 @media (max-width: 600px) {
@@ -946,6 +1031,19 @@ body {
 		padding: 90px 0;
 		&__scans {
 			grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+		}
+	}
+
+	.student-life {
+		&__title {
+			top: 20px;
+			left: 20px;
+		}
+		&__photo {
+			&--decor {
+				top: -360px;
+				left: -120px;
+			}
 		}
 	}
 }
@@ -1028,6 +1126,26 @@ body {
 	.teachers {
 		&__grid {
 			grid-template-columns: 1fr;
+		}
+	}
+
+	.student-life {
+		&__photo {
+			&--decor {
+				display: none;
+			}
+		}
+		&__title {
+			font-size: rem(28);
+			text-align: center;
+			left: 0;
+			br:nth-child(2) {
+				display: none;
+			}
+			span {
+				-webkit-text-fill-color: #fff;
+				-webkit-text-stroke: none;
+			}
 		}
 	}
 }
