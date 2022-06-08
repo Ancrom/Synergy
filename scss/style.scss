@@ -1167,6 +1167,14 @@ body {
 		font-size: rem(44);
 	}
 
+	.whatsapp {
+		&__button {
+			&:not(:last-child) {
+				margin: 0 10px 0 0;
+			}
+		}
+	}
+
 	.advantage {
 		&__cards {
 			display: grid;
@@ -1237,6 +1245,18 @@ body {
 @media (max-width: 456px) {
 	.title {
 		text-align: center;
+	}
+
+	.whatsapp {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		&__button:not(:last-child) {
+			margin: 0 0 25px 0;
+		}
+		&__link {
+			font-size: 2.125rem;
+		}
 	}
 
 	.hero {

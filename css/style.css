@@ -1356,6 +1356,9 @@ body {
   .title {
     font-size: 2.75rem;
   }
+  .whatsapp__button:not(:last-child) {
+    margin: 0 10px 0 0;
+  }
   .advantage__cards {
     display: -ms-grid;
     display: grid;
@@ -1415,6 +1418,24 @@ body {
 @media (max-width: 456px) {
   .title {
     text-align: center;
+  }
+  .whatsapp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .whatsapp__button:not(:last-child) {
+    margin: 0 0 25px 0;
+  }
+  .whatsapp__link {
+    font-size: 2.125rem;
   }
   .hero {
     padding: 280px 0 150px;
