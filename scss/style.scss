@@ -94,6 +94,20 @@ body {
 	margin: 0 auto;
 }
 
+.--ibg {
+	position: relative;
+	img {
+		content: "";
+		position: absolute;
+		display: block;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
 .wrapper {
 	min-height: 100vh;
 	display: flex;
@@ -117,6 +131,7 @@ body {
 }
 
 .link {
+	display: inline-block;
 	background: $color-blue;
 	color: #fff;
 	font-weight: 700;
@@ -146,7 +161,7 @@ body {
 	}
 }
 
-.contacts {
+.whatsapp {
 	&__button {
 		display: inline-block;
 		background: url(../img/icons/whatsapp-logo.svg) no-repeat 24px center, $color-blue;
@@ -320,7 +335,7 @@ body {
 		}
 	}
 	&__checkbox + label {
-		display: inline-flex;
+		display: flex;
 		align-items: center;
 		user-select: none;
 		&::before {
@@ -728,14 +743,14 @@ body {
 		gap: 15px;
 	}
 	&__photo {
-		position: relative;
 		padding: 0 0 50% 0;
 		overflow: hidden;
 		&--big {
 			grid-column: span 2;
 			grid-row: span 2;
 		}
-		&--decor {
+		&--decor,
+		&--decor-2 {
 			display: block;
 			position: absolute;
 			width: 500px;
@@ -746,6 +761,10 @@ body {
 			transform: matrix(-1, 0, 0, 1, 0, 0);
 			background: rgba(24, 25, 64, 0.7);
 			border-radius: 50%;
+		}
+		&--decor-2 {
+			background: #714a2583;
+			left: -155px;
 		}
 	}
 	&__title {
@@ -764,15 +783,118 @@ body {
 			-webkit-text-stroke: 1px #fff;
 		}
 	}
-	&__image {
-		position: absolute;
-		content: "";
-		display: block;
-		left: 0;
-		top: 0;
+}
+
+// ! ANSWERS =====================================
+
+.answers {
+	padding: 130px 0 300px 0;
+	background: #eff2f9;
+	&__container {
+		max-width: 1410px;
+	}
+	&__title {
+		&:not(:last-child) {
+			margin: 0 0 144px 0;
+		}
+	}
+}
+
+.questions {
+	&__item {
+		background: #fff;
+		padding: 40px;
+		&:not(:last-child) {
+			margin: 0 0 12px 0;
+		}
+		&.active .questions__text {
+			display: block;
+		}
+	}
+	&__title {
+		font-weight: 700;
+		font-size: rem(32);
+		line-height: 1.25;
+		background: #fff;
+		position: relative;
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		text-align: left;
+		span {
+			display: block;
+			margin: 0 47px 0 0;
+		}
+		&::before,
+		&::after {
+			content: "";
+			width: 32px;
+			height: 3px;
+			background: #000;
+			position: absolute;
+			right: 0;
+			top: 16px;
+			transition: 0.2s ease-out;
+		}
+		&::after {
+			transform: rotate(90deg);
+		}
+		&.active::after {
+			transform: rotate(0deg);
+		}
+	}
+	&__text {
+		max-width: 810px;
+		margin: 40px 0 0 0;
+		font-weight: 600;
+		font-size: rem(20);
+		line-height: 1.5;
+		transition: 0.3s;
+		display: none;
+	}
+}
+
+// ! CONTACTS ====================================
+
+.contacts {
+	padding: 130px 0 173px 0;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		flex-flow: wrap;
+		align-items: center;
+		max-width: 1150px;
+	}
+	&__commission {
+		&:not(:last-child) {
+			margin: 0 40px 0 0;
+		}
+	}
+	&__title {
+		text-align: left;
+		&:not(:last-child) {
+			margin: 0 0 60px 0;
+		}
+	}
+	&__subtitle {
+		font-weight: 700;
+		font-size: rem(30);
+		&:not(:last-child) {
+			margin: 0 0 15px 0;
+		}
+	}
+	&__text {
+		font-weight: 400;
+		font-size: rem(16);
+		line-height: 1.5;
+		&:not(:last-child) {
+			margin: 0 0 27px 0;
+		}
+	}
+	&__link {
+		color: #fff;
+	}
+	&__map {
+		flex: 0 1 67.57%;
+		padding: 0 0 41% 0;
 	}
 }
 
@@ -814,9 +936,24 @@ body {
 }
 
 @media (max-width: 1130px) {
+	.education {
+		&__container {
+			padding: 50px 15px 100px;
+		}
+	}
+	.diplomas {
+		padding: 50px 0;
+	}
+
 	.advantage {
+		&__container {
+			padding: 50px 0;
+		}
 		&__item-wrapper {
 			flex: 0 1 100%;
+		}
+		&__image {
+			display: none;
 		}
 	}
 
@@ -829,13 +966,25 @@ body {
 	}
 
 	.job-offers {
+		&__container {
+			padding: 50px 20px 130px;
+		}
 		&__columns-wrapper {
 			grid-template-columns: repeat(2, 1fr);
 			row-gap: 90px;
 		}
 	}
 
+	.teachers {
+		padding: 50px 0;
+	}
+
+	.partners {
+		padding: 50px 0 50px 0;
+	}
+
 	.student-life {
+		padding: 0 0 50px 0;
 		&__grid {
 			grid-template-columns: repeat(2, 1fr);
 		}
@@ -843,6 +992,39 @@ body {
 			order: 2;
 			&--big:nth-child(3) {
 				order: 1;
+			}
+		}
+	}
+
+	.answers {
+		padding: 50px 0 220px 0;
+		&__title {
+			&:not(:last-child) {
+				margin: 0 0 30px 0;
+			}
+		}
+	}
+
+	.contacts {
+		padding: 50px 0;
+		text-align: center;
+		&__container {
+			flex-flow: column;
+			align-items: stretch;
+		}
+		&__commission {
+			&:not(:last-child) {
+				margin: 0 0 50px 0;
+			}
+		}
+		&__map {
+			flex: 1 1 auto;
+			padding: 0 0 50% 0;
+		}
+		&__title {
+			text-align: center;
+			&:not(:last-child) {
+				margin: 0 0 30px 0;
 			}
 		}
 	}
@@ -912,17 +1094,17 @@ body {
 		}
 		&__form {
 			position: relative;
-			padding: 25px 80px 100px;
+			padding: 25px 80px 25px;
 		}
 	}
 
 	.education {
 		&__container {
-			padding: 80px 15px 50px;
+			padding: 50px 15px 50px;
 		}
 		&__title {
 			&:not(:last-child) {
-				margin: 0 0 70px 0;
+				margin: 0 0 50px 0;
 			}
 		}
 		&__cards {
@@ -986,9 +1168,6 @@ body {
 	}
 
 	.advantage {
-		&__container {
-			padding: 120px 0 100px;
-		}
 		&__cards {
 			display: grid;
 			grid-auto-rows: 1fr;
@@ -1000,9 +1179,6 @@ body {
 		&__item {
 			padding: 18px 25px;
 			flex-flow: column;
-		}
-		&__image {
-			display: none;
 		}
 	}
 
@@ -1016,9 +1192,6 @@ body {
 	}
 
 	.job-offers {
-		&__container {
-			padding: 50px 20px;
-		}
 		&__columns-wrapper {
 			grid-template-columns: 1fr;
 		}
@@ -1028,9 +1201,22 @@ body {
 	}
 
 	.diplomas {
-		padding: 90px 0;
+		padding: 50px 0;
+		text-align: center;
+		&__title {
+			text-align: center;
+			max-width: none;
+		}
 		&__scans {
 			grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+		}
+	}
+
+	.teachers {
+		&__img {
+			&:not(:last-child) {
+				margin: 0 0 30px 0;
+			}
 		}
 	}
 
@@ -1051,20 +1237,6 @@ body {
 @media (max-width: 456px) {
 	.title {
 		text-align: center;
-	}
-
-	.contacts {
-		display: flex;
-		flex-flow: column;
-		align-items: center;
-		&__button {
-			&:not(:last-child) {
-				margin: 0 0 25px 0;
-			}
-		}
-		&__link {
-			font-size: rem(34);
-		}
 	}
 
 	.hero {
@@ -1131,7 +1303,8 @@ body {
 
 	.student-life {
 		&__photo {
-			&--decor {
+			&--decor,
+			&--decor-2 {
 				display: none;
 			}
 		}
@@ -1145,6 +1318,45 @@ body {
 			span {
 				-webkit-text-fill-color: #fff;
 				-webkit-text-stroke: none;
+			}
+		}
+	}
+
+	.answers {
+		&__container {
+			padding: 0;
+		}
+	}
+
+	.questions {
+		&__item {
+			padding: 30px 15px;
+		}
+		&__title {
+			font-size: rem(25);
+			&::before,
+			&::after {
+				width: 20px;
+				height: 2.5px;
+			}
+		}
+	}
+
+	.contacts {
+		display: flex;
+		flex-flow: column;
+		&__container {
+			margin: 0;
+		}
+		&__button {
+			&:not(:last-child) {
+				margin: 0 0 25px 0;
+			}
+		}
+		&__link {
+			font-size: rem(34);
+			span {
+				display: none;
 			}
 		}
 	}
