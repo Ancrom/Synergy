@@ -217,6 +217,23 @@ body {
   transition: 0.3s ease-out;
 }
 
+.map {
+  position: relative;
+  -webkit-box-shadow: 10px 8px 39px #8883833f;
+          box-shadow: 10px 8px 39px #8883833f;
+}
+
+.map iframe {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .header {
   position: absolute;
   top: 0;
@@ -1079,6 +1096,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   max-width: 1150px;
+  padding: 0 10px;
 }
 
 .contacts__commission:not(:last-child) {
@@ -1123,6 +1141,93 @@ body {
   padding: 0 0 41% 0;
 }
 
+.buildings {
+  padding: 0 0 137px 0;
+}
+
+.buildings__container {
+  max-width: 1410px;
+  padding: 0 10px;
+}
+
+.buildings__title:not(:last-child) {
+  margin: 0 0 60px 0;
+}
+
+.buildings__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 60px 40px;
+}
+
+.buildings__map {
+  padding: 0 0 60% 0;
+}
+
+.buildings__map:not(:last-child) {
+  margin: 0 0 40px 0;
+}
+
+.buildings__text {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.footer {
+  background: #eff2f9;
+  padding: 50px 0 45px 0;
+}
+
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__logo svg {
+  width: 170px;
+  height: 30px;
+}
+
+.footer__logo:not(:last-child) {
+  margin: 0 20px 0 0;
+}
+
+.footer__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__info:not(:last-child) {
+  margin: 0 20px 0 0;
+}
+
+.footer__info-item {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.footer__info-item span {
+  font-weight: 700;
+}
+
+.footer__info-item:not(:last-child) {
+  margin: 0 37px 0 0;
+}
+
 @media (max-width: 1760px) {
   .hero__image {
     right: 15px;
@@ -1134,6 +1239,21 @@ body {
   }
   .job-offers__image {
     right: 0;
+  }
+}
+
+@media (max-width: 1600px) {
+  .footer__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .footer__logo:not(:last-child) {
+    margin: 0 0 20px 0;
+  }
+  .footer__info:not(:last-child) {
+    margin: 0 0 20px 0;
   }
 }
 
@@ -1234,6 +1354,9 @@ body {
   }
   .contacts__title:not(:last-child) {
     margin: 0 0 30px 0;
+  }
+  .buildings {
+    padding: 0 0 50px 0;
   }
 }
 
@@ -1350,6 +1473,17 @@ body {
   .student-life__photo--big {
     grid-column: span 1;
   }
+  .footer__container {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .footer__info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1436,6 +1570,11 @@ body {
   }
   .whatsapp__link {
     font-size: 2.125rem;
+  }
+  .footer__whatsapp {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   .hero {
     padding: 280px 0 150px;
