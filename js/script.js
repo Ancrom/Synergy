@@ -1,6 +1,7 @@
-document.querySelectorAll(".questions__title").forEach((item) =>
+document.querySelectorAll(".questions__item").forEach((item) =>
   item.addEventListener("click", () => {
-    item.classList.toggle("active");
-    item.parentNode.classList.toggle("active");
+    item.querySelector(".questions__text").classList.toggle("active");
   })
 );
+
+

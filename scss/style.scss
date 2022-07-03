@@ -819,9 +819,9 @@ body {
 		&:not(:last-child) {
 			margin: 0 0 12px 0;
 		}
-		&.active .questions__text {
-			display: block;
-		}
+		// &.active .questions__text {
+		// 	display: block;
+		// }
 	}
 	&__title {
 		font-weight: 700;
@@ -861,6 +861,9 @@ body {
 		line-height: 1.5;
 		transition: 0.3s;
 		display: none;
+		&.active {
+			display: block;
+		}
 	}
 }
 
