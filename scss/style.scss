@@ -861,7 +861,17 @@ body {
 		line-height: 1.5;
 		transition: 0.3s;
 		display: none;
-		&.active {
+	}
+}
+
+.active {
+	.questions {
+		&__title {
+			&::after {
+				transform: rotate(0deg);
+			}
+		}
+		&__text {
 			display: block;
 		}
 	}

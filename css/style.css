@@ -1075,7 +1075,12 @@ body {
   display: none;
 }
 
-.questions__text.active {
+.active .questions__title::after {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.active .questions__text {
   display: block;
 }
 
